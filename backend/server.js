@@ -2,10 +2,13 @@ import http from "http";
 import express from "express";
 import { Server } from "socket.io";
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://rajlekkaiyaraja_db_user:XRaCKTJM8MdCnCec@tn-election-cluster.pxbrw1r.mongodb.net/tn_exitpoll_election?retryWrites=true&w=majority";
-const PORT = process.env.PORT || 3000;
-const DB_NAME = "tn_exitpoll_election";
+dotenv.config();
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://rajlekkaiyaraja_db_user:I7JzgKvAnulGpBiA@ac-csn4eiw-shard-00-00.pxbrw1r.mongodb.net:27017,ac-csn4eiw-shard-00-01.pxbrw1r.mongodb.net:27017,ac-csn4eiw-shard-00-02.pxbrw1r.mongodb.net:27017/election_game?ssl=true&replicaSet=atlas-534oll-shard-0&authSource=admin&retryWrites=true&w=majority";
+const PORT = process.env.PORT || 3001;
+const DB_NAME = "election_game";
 const COLLECTION_NAME = "votes";
 
 const defaultVotes = {
