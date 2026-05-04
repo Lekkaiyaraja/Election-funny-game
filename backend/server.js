@@ -78,6 +78,33 @@ app.post("/vote", async (req, res) => {
   }
 });
 
+app.post("/admin/update", async (req, res) => {
+  const { constituency, party, count } = req.body;
+  if (!voteState[constituency] || !Object.prototype.hasOwnProperty.call(voteState[constituency], party)) {
+    return res.status(400).json({ error: "Invalid constituency or party." });
+  }
+
+  const value = Number(count);
+  if (!Number.isInteger(value) || value < 0) {
+    return res.status(400).json({ error: "Count must be a non-negative integer." });
+  }
+
+  try {
+    await dbCollection.updateOne(
+      { _id: "voteState" },
+      { $set: { [`${constituency}.${party}`]: value } },
+      { upsert: true }
+    );
+
+    voteState[constituency][party] = value;
+    io.emit("votes.updated", voteState);
+    res.json(voteState);
+  } catch (error) {
+    console.error("Error updating admin vote:", error);
+    res.status(500).json({ error: "Could not update vote count." });
+  }
+});
+
 io.on("connection", socket => {
   socket.emit("votes.updated", voteState);
 });

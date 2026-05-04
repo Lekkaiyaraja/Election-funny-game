@@ -28,6 +28,12 @@ This project is now separated into two deployable apps:
 2. Create `.env` based on `backend/.env.example`.
 3. Run `npm start`.
 
+## Admin page
+
+- Open `frontend/admin.html` in your hosted frontend or locally to manage vote totals.
+- Enter the constituency, party, and vote count in the admin form.
+- The backend route `POST /admin/update` updates the stored vote total and broadcasts the change live.
+
 ## Local development
 
 - Frontend: open `frontend/index.html` in a browser or serve it using a static server.

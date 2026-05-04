@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Vote Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="screen">
+    <main class="admin-panel">
+      <div class="admin-header">
+        <a class="admin-back" href="index.html">← Back to game</a>
+        <div>
+          <div class="headline">Admin Vote Manager</div>
+          <div class="subhead">Update live vote totals and broadcast results instantly.</div>
+        </div>
+      </div>
+
+      <form id="adminForm" class="admin-form">
+        <div class="admin-row">
+          <label>
+            Constituency
+            <select id="constituency"></select>
+          </label>
+          <label>
+            Party
+            <select id="party"></select>
+          </label>
+          <label>
+            Vote total
+            <input id="count" type="number" min="0" step="1" placeholder="Enter vote count" />
+          </label>
+          <label>
+            &nbsp;
+            <button type="submit">Update Votes</button>
+          </label>
+        </div>
+      </form>
+
+      <div class="admin-status" id="adminStatus">Loading current vote totals…</div>
+      <div class="admin-grid" id="adminGrid"></div>
+    </main>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
