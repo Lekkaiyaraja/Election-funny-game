@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funny Live Vote Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <div class="title-block">
+        <div class="headline">Funny Live Vote Game</div>
+        <div class="subhead">A wild YouTube live party scoreboard with sound, confetti, and vote mayhem.</div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-constituency="trichyEast" type="button">Trichy East</button>
+        <button class="tab" data-constituency="perambur" type="button">Perambur</button>
+      </div>
+    </header>
+
+    <main class="arena">
+      <section class="hero-panel">
+        <div class="hero-ring">
+          <img id="heroImage" class="hero-image" alt="Party leader" src="" />
+        </div>
+        <div class="hero-copy">
+          <div class="hero-eyebrow">Live Vote Arena</div>
+          <h1 id="heroParty">Ready to click</h1>
+          <p>Tap any party card to send votes flying, sync live with everyone, and watch the celebration kick in.</p>
+          <div class="hero-stats">
+            <div class="hero-card mini">
+              <span id="heroVotes">0</span>
+              <small>Live Votes</small>
+            </div>
+            <div class="hero-card mini">
+              <span id="heroRange">0 - 0</span>
+              <small>Vote Range</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards-panel">
+        <div class="party-grid" id="partyGrid"></div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast">Party Celebrating!</div>
+    <div class="cheer-overlay" id="cheerOverlay">Party Celebration!</div>
+    <canvas id="confettiCanvas"></canvas>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" defer></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
