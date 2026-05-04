@@ -1,0 +1,13 @@
+{
+  "name": "funny-live-vote-game",
+  "private": true,
+  "workspaces": [
+    "backend"
+  ],
+  "scripts": {
+    "start": "cd backend && npm start"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
