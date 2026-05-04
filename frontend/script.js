@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://election-funny-game.onrender.com";
 
 const partyList = [
   { key: "tvk", name: "TVK", color: "#ff3f3f", accent: "#ff8a7a", image: "images/vijay.jpg" },

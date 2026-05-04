@@ -20,6 +20,7 @@ This project is now separated into two deployable apps:
 1. Push `frontend/` to a Git repository.
 2. Configure Netlify or another static host to publish from `frontend/`.
 3. If the backend is deployed on a separate domain, update `frontend/script.js` `BACKEND_URL` to point to that endpoint.
+4. For this project, the backend is deployed at `https://election-funny-game.onrender.com`.
 
 ## Deploy backend separately
 
